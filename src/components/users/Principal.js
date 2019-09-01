@@ -8,18 +8,16 @@ export class Principal extends Component {
     constructor(props){
         super(props);
         this.state = {
-            users: []
+            users: [],
+            is_loading: true
         }
     }
 
     async componentDidMount(){
-        await services.getUsers().then((response) => {
-            this.setState({
-                users: [ ...response.data ]
-            })
-        }, (error) => {
-            console.log(error)
-        })
+        const users = await services.getUsers()
+        this.setState({
+            users: [ ...users.data ]
+        })        
     }
 
     render() {

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import services from '../../config/services';
 import DetailUser from './DetailUser';
+import Loader from '../loader/Loader';
 
 const initialProfile = {
     company: {},
@@ -17,7 +18,8 @@ export class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ...initialProfile
+            ...initialProfile,
+            'is_loading': true
         }
     }
 
@@ -26,21 +28,27 @@ export class Profile extends Component {
         const user = await services.getUser(id);
         this.setState({
             ...user.data
+        }, () => {
+            this.setState({
+                is_loading: false
+            })
         })
+        
     }
 
     render() {
-
         return (
             <Fragment>
-                <div className="d-flex" id="wrapper">
-                    <DetailUser user={this.state}/>
-                    <div id="page-content-wrapper">
-                        <div className="container-fluid">
-                            <h1 className="mt-4">Content</h1>
+                { this.state.is_loading ?  <Loader /> : 
+                    <div className="d-flex" id="wrapper">
+                        <DetailUser user={this.state}/>
+                        <div id="page-content-wrapper">
+                            <div className="container-fluid">
+                                <h1 className="mt-4">Content</h1>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
             </Fragment>
         )
     }

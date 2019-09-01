@@ -12,8 +12,7 @@ const DetailUser = (props) => {
     return (
         <Fragment>
             <div className="col-md-3 pt-5" id="sidebar-wrapper" style={sidebarStyle}>
-                <h1 className="text-center">{props.user.name}</h1>
-                <hr />
+                <h1 className="text-center mb-5" style={{ backgroundColor: 'black', color: 'white'}}>{props.user.name}</h1>
                 <div className="row justify-content-center">
                     <FontAwesomeIcon icon="user" /> <p>{props.user.username}</p>
                 </div>
@@ -28,11 +27,11 @@ const DetailUser = (props) => {
                 </div>
                 <div className="row">
                     <div className="col-md-12 text-center">
-                        <h2>Company</h2>
+                        <h2 className="font-weight-bold">Company</h2>
                         <hr />
                         <div className="row text-center">
                             <div className="col-md-4">
-                                <label>Name</label>
+                                <label className="font-weight-bold">Name</label>
                             </div>
                             <div className="col-md-8">
                                 {props.user.company.name}
@@ -40,7 +39,7 @@ const DetailUser = (props) => {
                         </div>
                         <div className="row text-center">
                             <div className="col-md-4">
-                                <label>key phrase</label>
+                                <label className="font-weight-bold">key phrase</label>
                             </div>
                             <div className="col-md-8">
                                 {props.user.company.catchPhrase}
@@ -50,11 +49,11 @@ const DetailUser = (props) => {
                 </div>
                 <div className="row mt-5">
                     <div className="col-md-12 text-center">
-                        <h2>Residence</h2>
+                        <h2 className="font-weight-bold">Residence</h2>
                         <hr />
                         <div className="row text-center">
                             <div className="col-md-4">
-                                <label>City</label>
+                                <label className="font-weight-bold">City</label>
                             </div>
                             <div className="col-md-8">
                                 {props.user.address.city}
@@ -62,7 +61,7 @@ const DetailUser = (props) => {
                         </div>
                         <div className="row text-center">
                             <div className="col-md-4">
-                                <label>Street</label>
+                                <label className="font-weight-bold">Street</label>
                             </div>
                             <div className="col-md-8">
                                 {props.user.address.street}
@@ -70,7 +69,7 @@ const DetailUser = (props) => {
                         </div>
                         <div className="row text-center">
                             <div className="col-md-4">
-                                <label>Suite</label>
+                                <label className="font-weight-bold">Suite</label>
                             </div>
                             <div className="col-md-8">
                                 {props.user.address.suite}
