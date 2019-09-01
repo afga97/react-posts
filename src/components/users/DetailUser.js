@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGlobe, faUser, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 library.add(faGlobe, faUser, faEnvelope, faPhone);
@@ -12,7 +13,8 @@ const DetailUser = (props) => {
     return (
         <Fragment>
             <div className="col-md-3 pt-5" id="sidebar-wrapper" style={sidebarStyle}>
-                <h1 className="text-center mb-5" style={{ backgroundColor: 'black', color: 'white'}}>{props.user.name}</h1>
+                <Link to="/" className="font-weight-bold text-dark" > &lt; Go Back</Link>
+                <h1 className="text-center mb-5 mt-2" style={{ backgroundColor: 'black', color: 'white'}}>{props.user.name}</h1>
                 <div className="row justify-content-center">
                     <FontAwesomeIcon icon="user" /> <p>{props.user.username}</p>
                 </div>

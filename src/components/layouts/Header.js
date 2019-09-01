@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 const Header = () => {
     return (
         <Fragment>
-            <div className="jumbotron jumbotron-fluid">
+            <div className="jumbotron jumbotron-fluid animation_up_down">
                 <div className="container">
                     <h1 className="text-center">Search user</h1>
                     <hr className="my-4" />

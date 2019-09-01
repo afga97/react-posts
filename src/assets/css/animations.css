@@ -1,0 +1,29 @@
+.animation_profile {
+    position: relative;
+    animation-name: example;
+    animation-duration: 0.2s;
+}  
+
+@keyframes example {
+    0%      {  left:100%; top:0%;  }
+    25%     {  left:75%;  top:0%;  }
+    50%     {  left:50%;  top:0%;  }
+    75%     {  left:25%;  top:0%;  }
+    100%    {  left:0%;   top:0%;  }
+}
+
+.animation_up_down {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    animation-name: examp;
+    animation-duration: 0.2s;
+}
+
+@keyframes examp {
+    0%   { top:-706px; }
+    25%  { top: -250px;}
+    50%  { top: -100px; }
+    75%  { top: -50px; }
+    100% { top:0px; }
+}
