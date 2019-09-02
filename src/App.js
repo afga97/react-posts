@@ -11,7 +11,7 @@ function App() {
     <Switch>
         <Route exact path="/" component={Principal} />
         <Route exact path="/profile/user/:id" component={Profile} />
-        <Route exact path="/comments/" component={Comment} />
+        <Route exact path="/posts/:id/comments" component={Comment} />
     </Switch>
   );
 }

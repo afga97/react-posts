@@ -45,14 +45,14 @@ export class Profile extends Component {
         return (
             <Fragment>
                 { this.state.is_loading ? <Loader /> : 
-                    <div className="d-flex animation_up_down">
+                    <div className="d-flex">
                         <DetailUser user={this.state}/>
-                        <div className="col-md-9 animation_profile">
+                        <div className="col-md-9">
                             <div id="page-content-wrapper">
                                 <div className="container-fluid"> 
                                     <div className="row">
                                         { this.state.posts.map( (post) => (
-                                            <Post key={post.id} post={post}/>                            
+                                            <Post key={post.id} post={post} show={true}/>                            
                                         ))}
                                     </div>  
                                 </div>

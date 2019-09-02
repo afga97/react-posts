@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGlobe, faUser, faEnvelope, faPhone, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import '../../assets/css/animations.css'
 
 library.add(faGlobe, faUser, faEnvelope, faPhone, faUserCircle);
 
 
 const User = (props) => {
     const info_user = props.user;
+    const class_selected = props.user.is_search ? 'selected': '';
     return (
         <Fragment>
             <div className="col-md-4 mb-4">
-                <div className="card h-100">
+                <div className={`card h-100 ${class_selected}`}>
                     <div className="card-body">
                         <div className="row">
                             <div className="col-md-4">

@@ -10,7 +10,8 @@ export class Principal extends Component {
         super(props);
         this.state = {
             users: [],
-            is_loading: true
+            is_loading: true,
+            user_search: ''
         }
     }
 
@@ -25,12 +26,31 @@ export class Principal extends Component {
         })      
     }
 
+    searchUser = (e) => {
+        this.setState({
+            user_search: e.target.value
+        })
+    }
+
+    filterUsers = () => {
+        const users = this.state.users.map( (user) => {
+            if (user.name !== this.state.user_search) return { ...user, is_search: false };
+            return {
+                ...user,
+                is_search: true
+            }
+        })
+        this.setState({
+            users
+        })
+    }
+
     render() {
         return (
             <Fragment>
                 {this.state.is_loading ? <Loader /> : 
                     <Fragment>
-                        <Header/>
+                        <Header searchUser={this.searchUser} filterUsers={this.filterUsers}/>
                         <div className="container-fluid animation_profile">
                             <div className="row">
                                 { this.state.users.map( (user) => (

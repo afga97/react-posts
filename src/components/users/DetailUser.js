@@ -13,7 +13,7 @@ const DetailUser = (props) => {
     return (
         <Fragment>
             <div className="col-md-3 pt-5" id="sidebar-wrapper" style={sidebarStyle}>
-                <Link to="/" className="font-weight-bold text-dark" > &lt; Go Back</Link>
+                <Link to="/" className="font-weight-bold text-dark" > &lt; Go Back </Link>
                 <h1 className="text-center mb-5 mt-2" style={{ backgroundColor: 'black', color: 'white'}}>{props.user.name}</h1>
                 <div className="row justify-content-center">
                     <FontAwesomeIcon icon="user" /> <p>{props.user.username}</p>
@@ -24,12 +24,12 @@ const DetailUser = (props) => {
                 <div className="row justify-content-center ">
                     <FontAwesomeIcon icon="phone" /> <p>{props.user.phone}</p>
                 </div>
-                <div className="row justify-content-center mb-5">
+                <div className="row justify-content-center">
                     <FontAwesomeIcon icon="globe" /> <p>{props.user.website}</p>
                 </div>
                 <div className="row">
                     <div className="col-md-12 text-center">
-                        <h2 className="font-weight-bold">Company</h2>
+                        <h2 className="font-weight-bold mt-3">Company</h2>
                         <hr />
                         <div className="row text-center">
                             <div className="col-md-4">
